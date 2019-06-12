@@ -9,7 +9,7 @@
                             <h5>Header {{record.id}}</h5>
                         </div>
                         <div class="card-body">
-                            <div class="card-title">{{record.name}}</div>
+                            <div class="card-title">{{record.title}}</div>
                             <div class="card-text">{{record.description}}</div>
                         </div>
                     </div>
@@ -39,7 +39,7 @@ export default {
   methods: {
 		// Our method to GET results from a Laravel endpoint
 		getResults(page = 1) {
-			axios.get('/TriggerSampleSoftware/public/dummy?page=' + page)
+			axios.get('dummy?page=' + page)
 				.then(response => {
 					this.dummyData = response.data;
 				});
@@ -54,11 +54,21 @@ export default {
     margin-bottom: 42px;
 }
 ul.pagination {
-    max-width: 379px;
+    max-width: 366px;
     margin-right: auto;
     margin-left: auto;
 }
 .col-md-12 {
     margin-bottom: 31px;
+}
+@media (max-width: 991px){
+    .row{
+            grid-template-columns: 50% 50%;
+    }
+}
+@media (max-width: 454px){
+    .row{
+            grid-template-columns: 100%;
+    }
 }
 </style>
