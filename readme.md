@@ -29,6 +29,7 @@ sh install.sh (Linux or MacOS)
 ## API Documenation
 
 * The `/dummy` endpoint accept/returns `application/json` type requests/responses
+* Authentication-based, user should be logged in to access the API 
 
 ### **Get Dummy**
 
