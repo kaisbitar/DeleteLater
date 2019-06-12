@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'TriggerSampleSoftware'),
+    'name' => env('APP_NAME', 'trigger-sample-software'),
 
     /*
     |--------------------------------------------------------------------------
