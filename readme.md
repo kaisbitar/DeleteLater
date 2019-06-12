@@ -21,7 +21,7 @@ sh install.sh (Linux or MacOS)
 
 ## Main functionalities
 
-- Login (Already created user="drud@trgr.ca" - password: "secret")
+- Login (Already created user:"drud@trgr.ca" - password: "secret")
 - Registration 
 - Logout
 - Display dynamic data (Randomly generated data)
