@@ -1,12 +1,12 @@
 # Trigger Sample Software
 
-# Requirements
+## Requirements
 
 - MySQL Server
 - PHP 7 or higer
 - node.js (Tested on v10.16.0)
 
-# Installation
+## Installation
 
 After cloning the repository, navigate in your terminal to the root directory of the project, edit the  `.env` and `install.sh` MySQL server credentials with your server's values.
 Simply run the following commands:
@@ -19,18 +19,18 @@ or
 sh install.sh (Linux or MacOS)
 ```
 
-# Main functionalities
+## Main functionalities
 
 - Login 
 - Registration 
 - Logout
 - Display dynamic data 
 
-# API Documenation
+## API Documenation
 
 * The `/dummy` endpoint accept/returns `application/json` type requests/responses
 
-## **Get Dummy**
+### **Get Dummy**
 
 <_returns dummy data for the test_>
 
