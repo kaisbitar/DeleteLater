@@ -13,7 +13,7 @@
 git clone https://github.com/kaisbitar/trigger-sample-software.git
 ```
 - In the root directory edit the files `.env` and `install.sh` MySQL server credentials with your server's values.
-- Navigate in your terminal to the root directory of the project then simply run the following commands:
+- Navigate in your terminal to the root directory of the project then simply run one of the following commands:
 
 ```sh
 ./install.sh (Windows using git bash)
