@@ -13,7 +13,7 @@ class DummyTableSeeder extends Seeder
     {
         for ($i = 1; $i <= 50; $i++) {
             DB::table('dummy')->insert([
-                'name' => 'name ' . $i,
+                'title' => 'title ' . $i,
                 'description' => Str::random(100),
             ]);
         }
