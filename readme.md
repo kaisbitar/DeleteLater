@@ -24,7 +24,8 @@ sh install.sh (Linux or MacOS)
 - Login (Already created user:"drud@trgr.ca" - password: "secret")
 - Registration 
 - Logout
-- Display dynamic data (Randomly generated data)
+- Display dynamic data (Randomly generated data)  
+_Note: If you are running the app from the localhost server make sure that you run `npm run dev` in that location, otherwise the API won't make the call correctly._  
 
 ## API Documenation
 
