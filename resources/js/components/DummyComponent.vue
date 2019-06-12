@@ -39,7 +39,7 @@ export default {
   methods: {
 		// Our method to GET results from a Laravel endpoint
 		getResults(page = 1) {
-			axios.get('dummy?page=' + page)
+			axios.get('/dummy?page=' + page)
 				.then(response => {
 					this.dummyData = response.data;
 				});

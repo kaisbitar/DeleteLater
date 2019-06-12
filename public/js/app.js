@@ -1738,7 +1738,7 @@ Vue.component('pagination', __webpack_require__(/*! laravel-vue-pagination */ ".
       var _this = this;
 
       var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/TriggerSampleSoftware/public/dummy?page=' + page).then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/dummy?page=' + page).then(function (response) {
         _this.dummyData = response.data;
       });
     }
@@ -6204,7 +6204,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.row[data-v-71f0bde0]{\r\n    display: grid;\r\n    grid-template-columns: 29% 29% 29%;\r\n    margin-bottom: 42px;\n}\nul.pagination[data-v-71f0bde0] {\r\n    max-width: 379px;\r\n    margin-right: auto;\r\n    margin-left: auto;\n}\n.col-md-12[data-v-71f0bde0] {\r\n    margin-bottom: 31px;\n}\r\n", ""]);
+exports.push([module.i, "\n.row[data-v-71f0bde0]{\r\n    display: grid;\r\n    grid-template-columns: 29% 29% 29%;\r\n    margin-bottom: 42px;\n}\nul.pagination[data-v-71f0bde0] {\r\n    max-width: 366px;\r\n    margin-right: auto;\r\n    margin-left: auto;\n}\n.col-md-12[data-v-71f0bde0] {\r\n    margin-bottom: 31px;\n}\n@media (max-width: 991px){\n.row[data-v-71f0bde0]{\r\n            grid-template-columns: 50% 50%;\n}\n}\n@media (max-width: 454px){\n.row[data-v-71f0bde0]{\r\n            grid-template-columns: 100%;\n}\n}\r\n", ""]);
 
 // exports
 
@@ -39088,7 +39088,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "card-body" }, [
                   _c("div", { staticClass: "card-title" }, [
-                    _vm._v(_vm._s(record.name))
+                    _vm._v(_vm._s(record.title))
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "card-text" }, [
@@ -51455,8 +51455,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\wamp64\www\TriggerSampleSoftware\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\wamp64\www\TriggerSampleSoftware\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\wamp64\www\trigger-sample-software\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\wamp64\www\trigger-sample-software\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
