@@ -37,7 +37,7 @@ sh install.sh (Linux or MacOS)
 * **URL** <_/dummy_>
 
 * **Method:** `GET`
-* **variables:** `page`
+
 | Parameter  | Type      | Required | Description                                       |
   | ---------- | --------- | -------- | ------------------------------------------------- |
   | page      | `int`    | false     | returns data and divide it into pages (Pagination) |
