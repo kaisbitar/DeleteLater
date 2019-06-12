@@ -21,10 +21,10 @@ sh install.sh (Linux or MacOS)
 
 ## Main functionalities
 
-- Login 
+- Login (Already created user="drud@trgr.ca" - password: "secret")
 - Registration 
 - Logout
-- Display dynamic data 
+- Display dynamic data (Randomly generated data)
 
 ## API Documenation
 
