@@ -3,12 +3,12 @@
 ## Requirements
 
 - MySQL Server
-- PHP 7 or higer
+- PHP 7 or higher
 - node.js (Tested on v10.16.0)
 
 ## Installation
 
-After cloning the repository, navigate in your terminal to the root directory of the project, edit the  `.env` and `install.sh` MySQL server credentials with your server's values.
+After cloning the repository, navigate in your terminal to the root directory of the project then edit the  `.env` and `install.sh` MySQL server credentials with your server's values.
 Simply run the following commands:
 
 ```sh
