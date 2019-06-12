@@ -22,7 +22,7 @@
 
 <script>
 import axios from "axios";
-Vue.component('pagination', require('laravel-vue-pagination'));
+import pagination from "laravel-vue-pagination";
 
 export default {  
   data() {
@@ -37,7 +37,6 @@ export default {
   },
 
   methods: {
-		// Our method to GET results from a Laravel endpoint
 		getResults(page = 1) {
 			axios.get('/dummy?page=' + page)
 				.then(response => {

@@ -1,72 +1,146 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+# HelloFresh Senior Backend Developer Test
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+# Installation
 
-## About Laravel
+After cloning the repository, navigate in your terminal to the root directory of the project and simply run the following commands:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+```sh
+    docker-compose build
+    docker-compose up -d
+    bash initiate.sh
+```
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# Libraries breakdown
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+* `auth0/auth0-php` An infrastructure to handle authentication via JWT tokens
+* `nikic/fast-route` A dispatcher lightweight library, which simply takes care of directing **valid** requests to handlers
+* `rdlowrey/auryn` A dependency injector that does **NOT** use Service Locator injection
+* `patricklouys/http` Simple wrapper around the superglobals, not used to send requests but rather to receive them
+* `monolog/monolog` Logging library (Did not use this library for lack of time)
+* `j4mie/idiorm` A very lightweight, simple, and elegant ORM. It can also be easily replaced with a full-fledged ORM if needed
 
-## Learning Laravel
+## Dev environment
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+* `phpunit/phpunit` !!
+* `filp/whoops` A well-known debugger (Laravel)
+* `guzzlehttp/guzzle` A library for sending HTTP requests, used only in the IntegrationTest
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1400 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+# API Documenation
 
-## Laravel Sponsors
+* The API **should** only send/accept `application/json` type requests/responses
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## **Get Recipes**
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
+<_returns all recipes_>
 
-## Contributing
+* **URL** <_/recipes_>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+* **Method:** `GET`
 
-## Security Vulnerabilities
+## **Get Recipe**
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+<_returns a recipe by id_>
 
-## License
+* **URL** <_/recipes/{id}_>
 
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+* **Method:** `GET`
+
+## **Search Recipe**
+
+<_searches the recipes by similarity to the name property_>
+
+* **URL** <_/recipes/search_>
+
+- **Method:** `GET`
+
+  | Parameter  | Type      | Required | Description                                       |
+  | ---------- | --------- | -------- | ------------------------------------------------- |
+  | query      | `Text`    | true     | Search query string, matched against recipe names |
+  | vegetarian | `Integer` | false    | Either true or false, don't specify to get both   |
+  | prep_time  | `Integer` | false    | A filter on time of preparation (0 - 300)         |
+  | difficulty | `Integer` | false    | A filter on difficulty (0 - 3)                    |
+
+## **Create Recipe**
+
+<_creates a recipe_>
+
+* **URL** <_/recipe_>
+
+- **Method:** `POST`
+
+- **Protected** `TRUE`
+
+  | Parameter  | Type      | Required | Description                               |
+  | ---------- | --------- | -------- | ----------------------------------------- |
+  | name       | `Text`    | true     | The name of the recipe                    |
+  | prep_time  | `Integer` | true     | A filter on time of preparation (0 - 300) |
+  | difficulty | `Integer` | true     | A filter on difficulty (0 - 3)            |
+  | vegetarian | `Boolean` | false    | Either true or false, defaults to false   |
+
+## **Update Recipe**
+
+<_updates a recipe_>
+
+* **URL** <_/recipe/{id}_>
+
+- **Method:** `PUT` | `PATCH`
+
+- **Protected** `TRUE`
+
+| Parameter  | Type      | Required | Description                               |
+| ---------- | --------- | -------- | ----------------------------------------- |
+| name       | `Text`    | false    | The name of the recipe                    |
+| vegetarian | `Boolean` | false    | Either true or false, defaults to false   |
+| prep_time  | `Integer` | false    | A filter on time of preparation (0 - 300) |
+| difficulty | `Integer` | false    | A filter on difficulty (0 - 3)            |
+
+## **Delete Recipe**
+
+<_deletes a recipe_>
+
+* **URL** <_/recipe/{id}_>
+
+- **Method:** `DELETE`
+
+- **Protected** `TRUE`
+
+## **Rate Recipe**
+
+<_rates a recipe_>
+
+* **URL** <_/recipe/{id}/rating_>
+
+* **Required** `id=[integer]`
+
+* **Method:** `POST`
+
+* **Protected** `TRUE`
+
+| Parameter  | Type      | Required | Description            |
+| ---------- | --------- | -------- | ---------------------- |
+| rate_value | `Integer` | true     | The rate value (1 - 5) |
+
+## All data returned is of type json
+
+# Docker
+
+I only had to add one insertion in docker-compose inside the postgres container (lines 48,49)
+
+```
+volumes:
+    - ./tmp/db:/var/lib/postgresql/data
+```
+
+which will simply map the postgres data into a temp folder.
+
+I did this so that the data is not lost when the container goes down
+
+# Tests
+
+To run tests run the following command
+
+```sh
+docker-compose exec php ./vendor/bin/phpunit  src/Tests/
+```
+
+## See more documentation and notes in `/docs`

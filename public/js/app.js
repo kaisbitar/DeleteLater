@@ -1699,6 +1699,8 @@ module.exports = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var laravel_vue_pagination__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! laravel-vue-pagination */ "./node_modules/laravel-vue-pagination/dist/laravel-vue-pagination.common.js");
+/* harmony import */ var laravel_vue_pagination__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(laravel_vue_pagination__WEBPACK_IMPORTED_MODULE_1__);
 //
 //
 //
@@ -1722,7 +1724,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
-Vue.component('pagination', __webpack_require__(/*! laravel-vue-pagination */ "./node_modules/laravel-vue-pagination/dist/laravel-vue-pagination.common.js"));
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1733,7 +1735,6 @@ Vue.component('pagination', __webpack_require__(/*! laravel-vue-pagination */ ".
     this.getResults();
   },
   methods: {
-    // Our method to GET results from a Laravel endpoint
     getResults: function getResults() {
       var _this = this;
 
@@ -51455,8 +51456,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\wamp64\www\trigger-sample-software\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\wamp64\www\trigger-sample-software\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\wamp2\www\trigger-sample-software\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\wamp2\www\trigger-sample-software\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
