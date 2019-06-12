@@ -9,7 +9,7 @@
 ## Installation
 
 After cloning the repository, navigate in your terminal to the root directory of the project then edit the  `.env` and `install.sh` MySQL server credentials with your server's values.
-Simply run the following commands:
+After that, simply run the following commands:
 
 ```sh
 .\install.sh (Windows using git bash)
