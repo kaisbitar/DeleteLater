@@ -18,7 +18,7 @@
         </div>
         <pagination :data="dummyData" @pagination-change-page="getResults"></pagination>
     </div>
-</template>
+</template> 
 
 <script>
 import axios from "axios";
