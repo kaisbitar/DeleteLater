@@ -24,7 +24,7 @@ class DummyController extends Controller
      */
     public function index()
     {
-        $dummy = Dummy::orderBy('id', 'ASC')->paginate(5);
+        $dummy = Dummy::orderBy('id', 'ASC')->paginate(6);
 
         return $dummy->toJson(JSON_PRETTY_PRINT);
 

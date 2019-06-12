@@ -108,7 +108,7 @@
     margin-left: auto;
     margin-right: auto;}
 .links {
-    background: #d8bfd852;
+    background: #bfd5d852;
     margin-bottom: 11px;
     }
     .links:hover {

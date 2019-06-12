@@ -15,7 +15,7 @@ class CreateDummyTable extends Migration
     {
         Schema::create('Dummy', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
+            $table->string('title');
             $table->string('description');
         });
     }
